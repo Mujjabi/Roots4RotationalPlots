@@ -5,4 +5,4 @@ Therefore, the focus will be put on the 2022 and 2023 dataset since a similar se
 
 Each rotation system is replicated 4 times, resulting to a total of **360 plots** per year (2 rot x 4 reps x 3 Nitro x 15 hybrids/Nitro). However for the root data, only N1 and N3 were sampled in 2022. In 2023, treatments in some of the replications were eliminated given to equipment operational errors that occurred during the spread of the chicken manure.
 
-The analysis will be conducted separately for each year.
+The analysis will be conducted separately for each year. The objective is to identify patterns of how root architecture changes with the rotation and nitrogen treatments.
