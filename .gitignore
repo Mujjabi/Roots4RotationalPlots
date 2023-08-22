@@ -6,4 +6,4 @@ RawData/
 Manuscripts/
 CleanData/
 .Rproj
-*.R
+Data_Analysis.R
