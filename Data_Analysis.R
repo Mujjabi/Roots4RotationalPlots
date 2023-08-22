@@ -84,6 +84,32 @@ bar.err(out2$means,variation = "SE", xlab="Nitrogen", ylab="Top Fractal Dimensio
 bar.err(out3$means,variation = "SE", xlab="Hybrid", ylab="Top Fractal Dimension", las =2, ylim=c(0,1.6))
 
 
+## Analysis of FD Side  using split split RCBD 
+model.FDS <- with(All2023, ssp.plot(Rep, Rotation, Nitro, HYB, FDS_Mean))
+
+gla<-model.FDS$gl.a 
+glb<-model.FDS$gl.b 
+glc<-model.FDS$gl.c
+
+Ea<-model.FDS$Ea 
+Eb<-model.FDS$Eb 
+Ec<-model.FDS$Ec
+
+out11<-with(All2023,HSD.test(FDS_Mean,Rotation,gla,Ea,group=TRUE,console=TRUE))
+out22<-with(All2023,HSD.test(FDS_Mean,Nitro,glb, Eb, group=TRUE, console=TRUE))
+out33<-with(All2023,HSD.test(FDS_Mean,HYB,glc,Ec,console=TRUE))
+
+par(mfrow=c(1,3),cex=0.6)
+plot(out11,xlab="Rotation System",las=1,variation="SE")
+plot(out22,xlab="Nitrogen Treatment",variation="IQR")
+plot(out33,xlab="Genotype",variation="IQR")
+
+par(mfrow=c(1,3),cex=0.6)
+bar.err(out11$means,variation = "SE", xlab="Rotation", ylab="Side Fractal Dimension", ylim=c(1,1.5))
+bar.err(out22$means,variation = "SE", xlab="Nitrogen", ylab="Side Fractal Dimension", ylim=c(1, 1.5))
+bar.err(out33$means,variation = "SE", xlab="Hybrid", ylab="Side Fractal Dimension", las =2, ylim=c(1,1.5))
+
+
 ## Analysis of RTA  using split split RCBD 
 
 model.RTA <- with(All2023, ssp.plot(Rep, Rotation, Nitro, HYB, RTA_Mean))
@@ -136,6 +162,7 @@ bar.err(out7$means,variation = "SE", xlab="Rotation", ylab="Root Weight", ylim=c
 bar.err(out8$means,variation = "SE", xlab="Nitrogen", ylab="Root Weight", ylim=c(0,250))
 bar.err(out9$means,variation = "SE", xlab="Hybrid", ylab="Root Weight", las =2, ylim=c(0,250))
 
+kk
 
 
 
